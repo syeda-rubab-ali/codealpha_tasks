@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Feed - SocialApp{% endblock %}
+{% block content %}
+<div class="composer">
+    <form method="post" action="/post/create/">
+        {% csrf_token %}
+        {{ post_form.as_p }}
+        <button type="submit">Post</button>
+    </form>
+    <hr>
+</div>
+
+<div class="feed">
+    {% for post in posts %}
+        <div class="post" data-post-id="{{ post.id }}">
+            <div class="post-header">
+                <a href="/u/{{ post.author.username }}/">@{{ post.author.username }}</a>
+                <span class="ts">{{ post.created_at }}</span>
+            </div>
+            <div class="post-content">{{ post.content|linebreaks }}</div>
+            <div class="post-actions">
+                <button class="like-btn" data-post-id="{{ post.id }}">
+                    ❤️ <span class="likes-count">{{ post.likes.count }}</span>
+                </button>
+            </div>
+            <div class="comments">
+                {% for c in post.comments.all %}
+                    <div class="comment">
+                        <a href="/u/{{ c.author.username }}/">@{{ c.author.username }}</a> {{ c.content }}
+                    </div>
+                {% endfor %}
+                <form method="post" action="/post/{{ post.id }}/comment/" class="comment-form">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <button type="submit">Comment</button>
+                </form>
+            </div>
+        </div>
+    {% empty %}
+        <p>No posts yet. Be the first!</p>
+    {% endfor %}
+{% endblock %}
+

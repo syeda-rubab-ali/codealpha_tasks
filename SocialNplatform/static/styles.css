@@ -1,0 +1,20 @@
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#a1b4e4;color:#e9eef5}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#a0b7eb;position:sticky;top:0;border-bottom:1px solid #97afd1}
+.navbar a{color:#c7d2fe;text-decoration:none;margin-right:12px}
+.navbar .brand{font-weight:700;color:#fff}
+.linklike{background:none;border:none;color:#c7d2fe;cursor:pointer}
+.container{max-width:820px;margin:24px auto;padding:0 16px}
+.flash{padding:8px 12px;border-radius:6px;margin:8px 0}
+.flash.success{background:#3e4e06}
+.composer textarea{width:100%;min-height:80px;padding:10px;border-radius:8px;border:1px solid #374151;background:#8ea0cc;color:#e5e7eb}
+.composer button{margin-top:8px;padding:8px 12px;border-radius:6px;border:1px solid #334155;background:#578a81;color:#e5e7eb;cursor:pointer}
+.feed .post{background:#91a9e0;border:1px solid #7fb495;border-radius:10px;padding:12px;margin-bottom:14px}
+.post-header{display:flex;justify-content:space-between;color:#9ca3af}
+.post-actions{margin-top:8px}
+.like-btn{background:#b13838;border:1px solid #374151;color:#e5e7eb;border-radius:6px;padding:6px 10px;cursor:pointer}
+.comments{margin-top:8px}
+.comment{font-size:14px;color:#cbd5e1;margin:4px 0}
+.profile .avatar{width:96px;height:96px;border-radius:9999px;border:2px solid #87a1c5}
+input,textarea{background:#7a93cc;border:1px solid #374151;color:#e5e7eb;border-radius:6px;padding:8px}
+button{background:#5b7bad;border:1px solid #334155;border-radius:6px;color:#e5e7eb;padding:8px 12px;cursor:pointer}
+
